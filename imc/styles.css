@@ -1,0 +1,132 @@
+*{box-sizing: border-box}
+html,body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(180deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    color: #111;
+}
+
+.tudo{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.container{
+    width: 100%;
+    max-width: 440px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    color: #f4f7f9;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    min-height: 320px;
+    box-shadow: 0 10px 30px rgba(8,15,20,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+    border-radius: 14px;
+    padding: 28px;
+    backdrop-filter: blur(6px);
+}
+
+.container h2{
+    margin: 0 0 4px 0;
+    font-size: 1.4rem;
+    text-align: center;
+    letter-spacing: 0.2px;
+}
+
+/* Input estilizado */
+#input{
+    appearance: none;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.03);
+    color: #fff;
+    padding: 12px 14px;
+    font-size: 1rem;
+    border-radius: 10px;
+    outline: none;
+    transition: box-shadow .18s ease, border-color .12s ease, transform .08s ease;
+}
+
+#input::placeholder{color: rgba(255,255,255,0.5)}
+
+#input:focus{
+    border-color: #6ee7b7;
+    box-shadow: 0 6px 18px rgba(14,165,233,0.08);
+    transform: translateY(-1px);
+}
+
+/* Mensagem de resultado */
+#mensagem{
+    min-height: 40px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: rgba(0,0,0,0.08);
+    color: #e6f4ea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Botão */
+button{
+    cursor: pointer;
+    border: none;
+    background: linear-gradient(90deg, #06b6d4, #3b82f6);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    transition: transform .12s ease, box-shadow .12s ease, opacity .08s ease;
+}
+
+button:hover{transform: translateY(-3px); box-shadow: 0 10px 24px rgba(59,130,246,0.18)}
+button:active{transform: translateY(0)}
+
+/* Responsividade */
+@media (max-width: 480px){
+    .container{padding:18px; border-radius:12px}
+    #input{font-size:0.95rem}
+    button{font-size:0.95rem}
+}
+
+/* Pequeno aviso quando campo inválido */
+.error{
+    background: linear-gradient(90deg,#ef4444,#f97316);
+    color: #fff;
+}
+
+#ms{
+     min-height: 40px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: rgba(0,0,0,0.08);
+    color: #e6f4ea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+}
+
+input{
+    border: 2px solid black;
+    border-radius: 4px;
+}
+input::placeholder{
+    text-align: center;
+}
+
+/* pequenas animações */
+@keyframes popIn{from{opacity:0;transform:scale(.98)}to{opacity:1;transform:scale(1)}}
+.container{animation: popIn .28s ease both}
+ 
